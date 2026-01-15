@@ -54,18 +54,22 @@
 
     .word-container {
       position: relative;
-      padding: 2rem 4rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
 
     /* Focus line indicator */
     .focus-line {
-      position: absolute;
-      top: 0;
+      position: fixed;
+      top: 30%;
+      bottom: 40%;
       left: 50%;
-      width: 1px;
-      height: 100%;
+      transform: translateX(-50%);
+      width: 2px;
       background: linear-gradient(to bottom, transparent, var(--accent), transparent);
-      opacity: 0.3;
+      opacity: 0.2;
+      pointer-events: none;
     }
 
     .word {
@@ -75,13 +79,25 @@
       white-space: nowrap;
       display: flex;
       align-items: baseline;
-      justify-content: center;
     }
 
-    .word-before, .word-after { color: var(--text); }
+    .word-before {
+      color: var(--text);
+      width: 45vw;
+      text-align: right;
+    }
+
+    .word-after {
+      color: var(--text);
+      width: 45vw;
+      text-align: left;
+    }
+
     .word-orp {
       color: var(--accent);
       position: relative;
+      text-align: center;
+      min-width: 0.6em;
     }
     .word-orp::after {
       content: '';
@@ -359,6 +375,7 @@
 
   <div class="drop-overlay" id="dropOverlay">Drop text file here</div>
 
+  <script>window.SPEED_READER_CONTENT = "Memento is a Claude Code command that extracts session memories into CLAUDE.md files. Core idea: After a coding session, /memento analyzes your conversation to find learnings that should persist - things like project conventions, user preferences, or patterns discovered during debugging. Key philosophy: Suggestions must be actionable - they should change Claude's future behavior. Vague observations get filtered out. Structure: .claude/commands/memento.md is the main memory extraction command. .claude/commands/brag.md is for generating social content ideas. docs/ and examples/ contain documentation and example scenarios. Memory types: Project Memory goes in ./CLAUDE.md for codebase-specific conventions. User Memory goes in ~/.claude/CLAUDE.md for cross-project preferences. Planned components include Memento MCP, a TypeScript server to read session history, and Memento Sync for Git-based backup with smart CLAUDE.md merging. The command is designed to be symlinked to ~/.claude/commands/ for global use across all projects.";</script>
   <!-- CONTENT_PLACEHOLDER -->
   <script>
     const $ = id => document.getElementById(id);
