@@ -2,7 +2,7 @@
 
 Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style ORP highlighting.
 
-![Speed Reader Demo](https://raw.githubusercontent.com/seanoliver/claude-speed-reader/main/demo.gif)
+![Speed Reader Demo](demo.gif)
 
 ## What is this?
 
@@ -12,7 +12,7 @@ A Claude Code skill that lets you speed-read any response. Uses **Rapid Serial V
 
 ```bash
 # Clone to your Claude skills directory
-git clone https://github.com/seanoliver/claude-speed-reader.git ~/.claude/skills/speed
+git clone https://github.com/SeanZoR/claude-speed-reader.git ~/.claude/skills/speed
 ```
 
 Or manually copy the `.claude/` folder contents to your `~/.claude/` directory.
